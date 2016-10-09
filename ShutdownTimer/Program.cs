@@ -23,6 +23,9 @@ namespace ShutdownTimer
                 {
                     Shutdown();
                     break;
+                } else if(seconds < 10)
+                {
+                    Console.Beep();
                 }
 
                 Thread.Sleep(1000);
@@ -40,8 +43,6 @@ namespace ShutdownTimer
             int x = 0;
             if (Int32.TryParse(input, out x))
             {
-                Console.WriteLine(x * 60);
-                Console.ReadKey();
                 return x * 60;
             } else
             {
